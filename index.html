@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>
+    </head>
+    <body>
+        <div  id="table_container">
+            <div id="form_container">
+                <!-- <form action="addPerson" method="POST"> -->
+                    <div class="form_group">
+                        <label class="form_label">Nom:</label>
+                        <input type="text" id="form_nom" class="form_field" name="valNom"/>
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label">Prenom:</label>
+                        <input type="text" id="form_prenom" class="form_field" name="valPrenom"/>
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label">Points:</label>
+                        <input type="text" id="form_points" class="form_field" name="valPoints"/>
+                    </div>
+    
+                    <!-- <input type="submit" class="btn-add" value="Ajouter"> -->
+                    <button  class="btn-add" onclick="doNewData()" > Ajouter</button>
+                    <button  class="btn-actualister" onclick="actualiser()" > Actualiser</button>
+
+
+
+                <!-- </form> -->
+            </div>
+
+            <div id="form_edit_container" hidden=true>
+                    <div class="form_group">
+                        <label class="form_label">id:</label>
+                        <input type="text" id="form_edit_id" class="form_field" name="valId" readonly=true/>
+                    </div>
+
+                    <div class="form_group">
+                        <label class="form_label">Nom:</label>
+                        <input type="text" id="form_edit_nom" class="form_field" name="valNom"/>
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label">Prenom:</label>
+                        <input type="text" id="form_edit_prenom" class="form_field" name="valPrenom"/>
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label">Points:</label>
+                        <input type="text" id="form_edit_points" class="form_field" name="valPoints"/>
+                    </div>
+    
+                    <button  class="btn-add" onclick="doEditData()" > Edit</button>
+                    <button  class="btn-actualister" onclick="annulerEdit()" > Annuler</button>
+
+            </div>
+
+            <table border="1">
+                <tr>
+                    <th class="col_number">N</th>
+                    <th class="col_text">Nom</th>
+                    <th class="col_text">Prenom</th>
+                    <th class="col_number">Points</th>
+                    <th class="col_chkbox">Select</th>
+                    <th class="col_edit">Edit</th>
+                </tr>
+
+
+            </table> 
+
+            <div id="container_summary">
+                <p id="p1">0 ligne(s)</p>
+                <p id="p2"></p>
+                <p id="p3">Total points(s) = 0</p>
+            </div>
+
+            <div id="container_btn">
+                 <button onclick="deleteRow()" class="btn-del">Supprimer</button>
+                 <button onclick="consoleTableau()" class="btn-console">Console Tableau</button>
+
+            </div>
+    
+            
+        </div>
+
+     
+    </body>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+</html>
